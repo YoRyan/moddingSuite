@@ -151,7 +151,10 @@ namespace moddingSuite.ViewModel.Ndf
 
                 if (propVal == null)
                 {
-                    return false;
+                    if PropertyFilterExpression.equals("\O")
+                        continue;
+                    else
+                        return false;
                 }
 
                 if (propVal.Value == null || propVal.Value.ToString().ToLower().Equals("null"))
@@ -164,6 +167,10 @@ namespace moddingSuite.ViewModel.Ndf
 
                 if (expr.Discriminator == FilterDiscriminator.Equals)
                     if (compare == 0)
+                        if (expr.Discriminator == FilterDiscriminator.Excludes)
+                            return false;
+                            else   
+                                continue;
                         continue;
                     else
                         return false;
