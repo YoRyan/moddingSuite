@@ -151,7 +151,7 @@ namespace moddingSuite.ViewModel.Ndf
 
                 if (propVal == null)
                 {
-                    if PropertyFilterExpression.equals("\O")
+                    if (expr.Value.Equals("\\0"))
                         continue;
                     else
                         return false;
