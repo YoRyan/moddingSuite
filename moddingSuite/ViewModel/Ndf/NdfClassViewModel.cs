@@ -171,7 +171,6 @@ namespace moddingSuite.ViewModel.Ndf
                             return false;
                             else   
                                 continue;
-                        continue;
                     else
                         return false;
 
